@@ -9,23 +9,22 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.16",
-    "@vueuse/core": "^10.2.1",
-    "gsap": "^3.12.2",
+    "@vueuse/core": "^14.3.0",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.23",
     "loconative-scroll": "github:quentinhocde/loconative-scroll",
-    "lottie-web": "^5.12.2",
-    "postprocessing": "^6.32.2",
-    "three": "^0.154.0"
+    "lottie-web": "^5.13.0",
+    "postprocessing": "^6.39.1",
+    "three": "^0.184.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.7",
-    "@nuxt/devtools": "latest",
-    "@nuxtjs/eslint-module": "^4.1.0",
-    "@nuxtjs/fontaine": "^0.4.0",
-    "@types/node": "^18",
-    "@types/three": "^0.152.1",
-    "eslint": "^8.44.0",
-    "nuxt": "^3.6.1",
-    "sass": "^1.63.6"
+    "@antfu/eslint-config": "^9.0.0",
+    "@nuxt/eslint": "^1.15.2",
+    "@nuxtjs/fontaine": "^0.5.0",
+    "@types/node": "^25.8.0",
+    "@types/three": "^0.184.1",
+    "eslint": "^10.4.0",
+    "nuxt": "^4.4.5",
+    "sass": "^1.99.0"
   }
 }

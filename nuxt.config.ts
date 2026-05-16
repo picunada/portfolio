@@ -1,26 +1,24 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  app: {
-    head: {
-      link: [{ rel: 'icon', type: 'image/png', href: '/Icon.svg' }],
-    },
-  },
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "@/assets/_colors.scss" as *;',
+    devtools: { enabled: true },
+    compatibilityDate: "2026-05-15",
+    app: {
+        head: {
+            link: [{ rel: "icon", type: "image/png", href: "/Icon.svg" }],
         },
-      },
     },
-  },
-  css: ['~/assets/main.scss'],
-  modules: [
-    // Simple usage
-    '@nuxtjs/fontaine',
-  ],
-  imports: {
-    dirs: ['./stores', './components/ui', 'utils'],
-  },
-})
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@use "@/assets/_colors.scss" as *;',
+                },
+            },
+        },
+    },
+    css: ["~/assets/main.scss"],
+    modules: ["@nuxtjs/fontaine", "@nuxt/eslint"],
+    imports: {
+        dirs: ["./stores", "./components/ui", "utils"],
+    },
+});
