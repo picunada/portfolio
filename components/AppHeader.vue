@@ -14,7 +14,7 @@ const isMobile = useMediaQuery('(max-width: 678px)')
       </NuxtLink>
       <NuxtLink v-else to="/">
         <div class="logo mouse-sm">
-          Picunada - Creative Web Developer
+          Picunada - Backend Engineer
         </div>
       </NuxtLink>
       <nav class="navigation">
@@ -23,7 +23,7 @@ const isMobile = useMediaQuery('(max-width: 678px)')
             Github
           </p>
         </CustomLink>
-        <CustomLink link="https://www.linkedin.com/in/daniil-bezuglov-4b1418234/" target="_blank">
+        <CustomLink link="https://www.linkedin.com/in/daniil-bezuglov/" target="_blank">
           <p class="mouse-sm">
             LinkedIn
           </p>

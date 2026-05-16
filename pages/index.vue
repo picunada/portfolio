@@ -7,7 +7,7 @@
     <div class="text-wrapper">
       <RevealOnScroll>
         <h1 class="mouse-lg">
-          Hello, I'm Picunada - a creative Fullstack Web Developer.
+          Hello, I'm Picunada - a Backend Engineer building payment systems.
         </h1>
       </RevealOnScroll>
     </div>
@@ -15,42 +15,42 @@
       <div class="about item-1">
         <RevealOnScroll>
           <p class="mouse-md">
-            I&apos;m all about turning ideas <br>
-            into vibrant and impactful designs, <br>
-            utilizing the power of WebGL and other frontend tools.
+            I architect and ship high-throughput payment platforms, <br>
+            event-driven services, and data aggregation systems <br>
+            in Go and Python.
           </p>
         </RevealOnScroll>
       </div>
       <div class="about item-2">
         <RevealOnScroll>
           <p class="mouse-md">
-            I&apos;m also experienced in backend technologies <br>
-            I've participated in system design of few projects <br>
-            using microservice architecture.
+            Currently leading engineering at a fintech startup, <br>
+            designing P2P payment flows, provider cascades over NATS, <br>
+            and real-time analytics on ClickHouse.
           </p>
         </RevealOnScroll>
       </div>
       <div class="about item-3">
         <RevealOnScroll>
           <p class="mouse-md">
-            Currently on the lookout for exciting job opportunities, <br>
-            I&apos;m constantly expanding my knowledge <br>
-            by creating cutting-edge applications.
+            I care about reliability and observability - <br>
+            distributed tracing, structured logs, and dashboards <br>
+            that catch issues before users do.
           </p>
         </RevealOnScroll>
       </div>
       <div class="about item-4">
         <RevealOnScroll>
           <p class="mouse-md">
-            Having spent the past year in Vietnam, <br>
-            I originally from Russia and am pursuing my studies remotely from there
+            Originally from Russia, I've lived and worked in Vietnam, <br>
+            and I'm currently based in Seattle, WA.
           </p>
         </RevealOnScroll>
       </div>
       <div class="about item-5">
         <RevealOnScroll>
           <p class="mouse-md">
-            When I&apos;m not immersed in the world of development, <br>
+            When I&apos;m not shipping backends, <br>
             you&apos;ll find me gaming and exploring the outdoors on refreshing walks.
           </p>
         </RevealOnScroll>
@@ -66,26 +66,35 @@
         <div class="work">
           <RevealOnScroll>
             <p class="mouse-sm">
-              MULTITENDER, APR 2023 - NOW <br>
-              6+ MONTHS <br>
-              SOFTWARE ENGINEER
-            </p>
-          </RevealOnScroll>
-        </div>
-        <div class="work">
-          <RevealOnScroll>
-            <p class="mouse-sm">
-              LOCKERBOT, APR 2021 - APR 2023 <br>
+              LUCKYPAY, JUN 2024 - NOW <br>
               2 YEARS <br>
-              SOFTWARE ENGINEER
+              TECH LEAD
             </p>
           </RevealOnScroll>
         </div>
         <div class="work">
           <RevealOnScroll>
             <p class="mouse-sm">
-              DIGITAL SPIRIT, OCT 2020 - APR 2021 <br>
-              6+ MONTHS <br>
+              MULTITENDER, APR 2023 - JUN 2024 <br>
+              1+ YEAR <br>
+              FULL STACK ENGINEER
+            </p>
+          </RevealOnScroll>
+        </div>
+        <div class="work">
+          <RevealOnScroll>
+            <p class="mouse-sm">
+              LOCKERBOT, APR 2022 - APR 2023 <br>
+              1 YEAR <br>
+              FRONTEND ENGINEER
+            </p>
+          </RevealOnScroll>
+        </div>
+        <div class="work">
+          <RevealOnScroll>
+            <p class="mouse-sm">
+              DIGITAL SPIRIT, SEP 2021 - APR 2022 <br>
+              7 MONTHS <br>
               QA ENGINEER
             </p>
           </RevealOnScroll>
@@ -149,9 +158,9 @@
           <p class="title mouse-sm">
             email
           </p>
-          <a href="mailto:picunada.dev@gmail.com" target="_blank">
+          <a href="mailto:xlaystgoku@gmail.com" target="_blank">
             <p class="value mouse-sm">
-              picunada.dev@gmail.com
+              xlaystgoku@gmail.com
             </p>
           </a>
         </div>
