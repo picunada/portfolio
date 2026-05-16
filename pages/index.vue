@@ -1,197 +1,194 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useSeoMeta({
+    title: "Picunada — Backend Engineer · Payments",
+    description:
+        "Backend Engineer and Tech Lead at LUCKYPAY. I build high-throughput payment platforms, event-driven services, and real-time analytics in Go and Python.",
+    ogTitle: "Picunada — Backend Engineer · Payments",
+});
+</script>
 
 <template>
     <Hero />
     <div class="page">
-        <div class="text-wrapper">
-            <RevealOnScroll>
-                <h1 class="mouse-lg">
-                    Hello, I'm Picunada - a Backend Engineer building payment
-                    systems.
-                </h1>
-            </RevealOnScroll>
-        </div>
-        <div class="grid">
-            <div class="about item-1">
+        <div class="page-content">
+            <div class="text-wrapper">
                 <RevealOnScroll>
-                    <p class="mouse-md">
-                        I architect and ship high-throughput payment platforms,
-                        <br />
-                        event-driven services, and data aggregation systems
-                        <br />
-                        in Go and Python.
-                    </p>
+                    <h1 class="mouse-lg">
+                        Hello, I'm Picunada - a Backend Engineer building
+                        payment systems.
+                    </h1>
                 </RevealOnScroll>
             </div>
-            <div class="about item-2">
-                <RevealOnScroll>
-                    <p class="mouse-md">
-                        Currently leading engineering at a fintech startup,
-                        <br />
-                        designing P2P payment flows, provider cascades over
-                        NATS, <br />
-                        and real-time analytics on ClickHouse.
-                    </p>
-                </RevealOnScroll>
-            </div>
-            <div class="about item-3">
-                <RevealOnScroll>
-                    <p class="mouse-md">
-                        I care about reliability and observability - <br />
-                        distributed tracing, structured logs, and dashboards
-                        <br />
-                        that catch issues before users do.
-                    </p>
-                </RevealOnScroll>
-            </div>
-            <div class="about item-4">
-                <RevealOnScroll>
-                    <p class="mouse-md">
-                        Originally from Russia, I've lived and worked in
-                        Vietnam, <br />
-                        and I'm currently based in Seattle, WA.
-                    </p>
-                </RevealOnScroll>
-            </div>
-            <div class="about item-5">
-                <RevealOnScroll>
-                    <p class="mouse-md">
-                        When I&apos;m not shipping backends, <br />
-                        you&apos;ll find me gaming and exploring the outdoors on
-                        refreshing walks.
-                    </p>
-                </RevealOnScroll>
-            </div>
-            <div class="experience item-6">
-                <div class="work">
+            <div class="grid">
+                <div class="about-column">
                     <RevealOnScroll>
-                        <div class="experience-header">experience</div>
+                        <p class="about mouse-md">
+                            I architect and ship high-throughput payment
+                            platforms, event-driven services, and data
+                            aggregation systems in Go and Python.
+                        </p>
                     </RevealOnScroll>
-                </div>
-                <div class="work">
                     <RevealOnScroll>
-                        <p class="mouse-sm">
-                            LUCKYPAY, JUN 2024 - NOW <br />
-                            2 YEARS <br />
-                            TECH LEAD
+                        <p class="about mouse-md">
+                            Currently leading engineering at a fintech startup,
+                            designing P2P payment flows, provider cascades over
+                            NATS, and real-time analytics on ClickHouse.
+                        </p>
+                    </RevealOnScroll>
+                    <RevealOnScroll>
+                        <p class="about mouse-md">
+                            I care about reliability and observability —
+                            distributed tracing, structured logs, and dashboards
+                            that catch issues before users do.
+                        </p>
+                    </RevealOnScroll>
+                    <RevealOnScroll>
+                        <p class="about mouse-md">
+                            Originally from Russia, I've lived and worked in
+                            Vietnam, and I'm currently based in Seattle, WA.
+                        </p>
+                    </RevealOnScroll>
+                    <RevealOnScroll>
+                        <p class="about mouse-md">
+                            When I&apos;m not shipping backends, you&apos;ll
+                            find me gaming and exploring the outdoors on
+                            refreshing walks.
                         </p>
                     </RevealOnScroll>
                 </div>
-                <div class="work">
+                <div class="experience">
                     <RevealOnScroll>
-                        <p class="mouse-sm">
-                            MULTITENDER, APR 2023 - JUN 2024 <br />
-                            1+ YEAR <br />
-                            FULL STACK ENGINEER
-                        </p>
+                        <div class="experience-header">[ experience ]</div>
                     </RevealOnScroll>
-                </div>
-                <div class="work">
                     <RevealOnScroll>
-                        <p class="mouse-sm">
-                            LOCKERBOT, APR 2022 - APR 2023 <br />
-                            1 YEAR <br />
-                            FRONTEND ENGINEER
-                        </p>
+                        <div class="work">
+                            <div class="work__company">LUCKYPAY</div>
+                            <div class="work__meta">Jun 2024 — Now · 2 yrs</div>
+                            <div class="work__role">Tech Lead</div>
+                        </div>
                     </RevealOnScroll>
-                </div>
-                <div class="work">
                     <RevealOnScroll>
-                        <p class="mouse-sm">
-                            DIGITAL SPIRIT, SEP 2021 - APR 2022 <br />
-                            7 MONTHS <br />
-                            QA ENGINEER
-                        </p>
+                        <div class="work">
+                            <div class="work__company">Multitender</div>
+                            <div class="work__meta">
+                                Apr 2023 — Jun 2024 · 1+ yr
+                            </div>
+                            <div class="work__role">Full Stack Engineer</div>
+                        </div>
                     </RevealOnScroll>
-                </div>
+                    <RevealOnScroll>
+                        <div class="work">
+                            <div class="work__company">Lockerbot</div>
+                            <div class="work__meta">
+                                Apr 2022 — Apr 2023 · 1 yr
+                            </div>
+                            <div class="work__role">Frontend Engineer</div>
+                        </div>
+                    </RevealOnScroll>
+                    <RevealOnScroll>
+                        <div class="work">
+                            <div class="work__company">Digital Spirit</div>
+                            <div class="work__meta">
+                                Sep 2021 — Apr 2022 · 7 mo
+                            </div>
+                            <div class="work__role">QA Engineer</div>
+                        </div>
+                    </RevealOnScroll>
 
-                <div class="work">
                     <RevealOnScroll>
-                        <div class="experience-header">awards</div>
+                        <div class="experience-header">[ awards ]</div>
                     </RevealOnScroll>
-                </div>
-                <div class="work">
                     <RevealOnScroll>
-                        <p class="mouse-sm">
-                            TON Foundation hackathon <br />
-                            2nd place <br />
-                            10K$ award
-                        </p>
+                        <div class="work">
+                            <div class="work__company">
+                                TON Foundation hackathon
+                            </div>
+                            <div class="work__meta">2nd place</div>
+                            <div class="work__role">$10K award</div>
+                        </div>
                     </RevealOnScroll>
                 </div>
             </div>
-        </div>
-        <div class="projects-wrapper">
+            <div class="projects-wrapper">
+                <RevealOnScroll>
+                    <h2 class="mouse-sm section-header">[ case studies ]</h2>
+                </RevealOnScroll>
+                <div class="project-grid">
+                    <RevealOnScroll>
+                        <NuxtLink
+                            to="/case/provider-cascade"
+                            class="case-card mouse-md"
+                        >
+                            <div class="case-card__meta">
+                                <span class="case-card__tag"
+                                    >payments · performance</span
+                                >
+                                <span class="case-card__year">2025</span>
+                            </div>
+                            <h3 class="case-card__title">
+                                Improving provider cascade performance
+                            </h3>
+                            <p class="case-card__lede">
+                                Reworking the routing layer that picks payment
+                                providers — cutting tail latency and surviving
+                                partial outages without manual intervention.
+                            </p>
+                            <span class="case-card__cta"
+                                >Read case study →</span
+                            >
+                        </NuxtLink>
+                    </RevealOnScroll>
+
+                    <RevealOnScroll>
+                        <NuxtLink
+                            to="/case/event-driven-payments"
+                            class="case-card mouse-md"
+                        >
+                            <div class="case-card__meta">
+                                <span class="case-card__tag"
+                                    >payments · architecture</span
+                                >
+                                <span class="case-card__year">2025</span>
+                            </div>
+                            <h3 class="case-card__title">
+                                Event-driven payment flow on NATS
+                            </h3>
+                            <p class="case-card__lede">
+                                Moving the payment pipeline off synchronous RPC
+                                and onto an event-driven backbone — decoupling
+                                services, taming retries, unlocking real-time
+                                analytics.
+                            </p>
+                            <span class="case-card__cta"
+                                >Read case study →</span
+                            >
+                        </NuxtLink>
+                    </RevealOnScroll>
+                </div>
+            </div>
             <RevealOnScroll>
-                <h2 class="mouse-sm section-header">projects</h2>
+                <h2 class="mouse-sm section-header">[ contacts ]</h2>
             </RevealOnScroll>
-            <div class="project-grid">
+            <div class="contacts-wrapper">
                 <RevealOnScroll>
-                    <NuxtLink to="/garant">
-                        <div
-                            class="project-card garant mouse-md"
-                            :style="{
-                                backgroundImage: `url('/project-images/garant-calc-hero.jpg')`,
-                                backgroundSize: 'cover',
-                                backgroundRepeat: 'no-repeat',
-                                backgroundPosition: 'center',
-                            }"
-                        />
-                    </NuxtLink>
+                    <div class="contact">
+                        <p class="title mouse-sm">email</p>
+                        <a href="mailto:xlaystgoku@gmail.com" target="_blank">
+                            <p class="value mouse-sm">xlaystgoku@gmail.com</p>
+                        </a>
+                    </div>
                 </RevealOnScroll>
-
                 <RevealOnScroll>
-                    <NuxtLink to="/portfolio-old">
-                        <div
-                            class="project-card mouse-md"
-                            :style="{
-                                backgroundImage: `url('/project-images/portfolio-old-hero.jpg')`,
-                                backgroundSize: 'cover',
-                                backgroundRepeat: 'no-repeat',
-                                backgroundPosition: 'center',
-                            }"
-                        />
-                    </NuxtLink>
-                </RevealOnScroll>
-
-                <RevealOnScroll>
-                    <NuxtLink to="/locker">
-                        <div
-                            class="project-card locker mouse-md"
-                            :style="{
-                                backgroundImage: `url('/project-images/locker-hero.jpg')`,
-                                backgroundSize: 'cover',
-                                backgroundRepeat: 'no-repeat',
-                                backgroundPosition: 'center',
-                            }"
-                        />
-                    </NuxtLink>
+                    <div class="contact">
+                        <p class="title mouse-sm">telegram</p>
+                        <a href="https://t.me/picunada" target="_blank">
+                            <p class="value mouse-sm">@picunada</p>
+                        </a>
+                    </div>
                 </RevealOnScroll>
             </div>
-        </div>
-        <RevealOnScroll>
-            <h1 class="mouse-sm section-header">contacts</h1>
-        </RevealOnScroll>
-        <div class="contacts-wrapper">
-            <RevealOnScroll>
-                <div class="contact">
-                    <p class="title mouse-sm">email</p>
-                    <a href="mailto:xlaystgoku@gmail.com" target="_blank">
-                        <p class="value mouse-sm">xlaystgoku@gmail.com</p>
-                    </a>
-                </div>
-            </RevealOnScroll>
-            <RevealOnScroll>
-                <div class="contact">
-                    <p class="title mouse-sm">telegram</p>
-                    <a href="https://t.me/picunada" target="_blank">
-                        <p class="value mouse-sm">@picunada</p>
-                    </a>
-                </div>
-            </RevealOnScroll>
         </div>
     </div>
-    <Hero />
 </template>
 
 <style>
@@ -203,82 +200,133 @@ h3 {
 </style>
 
 <style lang="scss" scoped>
+.page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 48px;
+    margin: 80px 0 120px;
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+
+    @media only screen and (max-width: 678px) {
+        padding: 24px;
+        margin: 48px 0 64px;
+        border-radius: 12px;
+    }
+}
+
 .text-wrapper {
     font-size: 2rem;
     font-weight: 300;
-    margin-top: 120px;
+    margin-top: 40px;
+
+    h1 {
+        font-weight: 400;
+    }
 
     @media only screen and (max-width: 678px) {
         font-size: 1.2rem;
+        margin-top: 16px;
     }
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 120px;
-    font-weight: 600;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 64px;
+    margin-top: 80px;
+    align-items: start;
+
+    @media only screen and (max-width: 678px) {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        margin-top: 48px;
+    }
+}
+
+.about-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 56ch;
 }
 
 .about {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+    text-wrap: pretty;
 
     @media only screen and (max-width: 678px) {
         font-size: 1rem;
+        line-height: 1.5;
     }
 }
 
 .experience {
-    font-size: 1rem;
-    font-weight: 500;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 8px;
+    align-items: stretch;
+    gap: 20px;
 
     @media only screen and (max-width: 678px) {
-        font-size: 0.8rem;
+        gap: 16px;
     }
 }
 
 .experience-header {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: var(--secondary);
-    margin-bottom: 4px;
+    margin: 8px 0 4px;
+
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
-.item-1 {
-    grid-column: 1/3;
+.work {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
 }
 
-.item-2 {
-    grid-column: 1/3;
-    grid-row: 2;
+.work__company {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $primary;
+    line-height: 1.3;
 }
 
-.item-3 {
-    grid-column: 1/3;
-    grid-row: 3;
+.work__meta {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: $secondary;
+    letter-spacing: 0.02em;
 }
 
-.item-4 {
-    grid-column: 1/3;
-    grid-row: 4;
-}
-
-.item-5 {
-    grid-column: 1/3;
-    grid-row: 5;
-}
-
-.item-6 {
-    grid-column: 3/4;
-    grid-row: 1/4;
+.work__role {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 2px;
 }
 
 .projects-wrapper {
-    margin-top: 120px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -293,22 +341,82 @@ h3 {
         }
     }
 
-    .project-card {
-        max-width: 100%;
-        min-height: 400px;
-        //border: solid 1px $primary;
-        //border-radius: 16px;
-        font-size: 2rem;
-        font-weight: 800;
+    .case-card {
         display: flex;
+        flex-direction: column;
+        gap: 16px;
+        min-height: 320px;
+        padding: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 12px;
+        background: transparent;
+        color: $primary;
+        text-decoration: none;
+        transition:
+            border-color 0.25s ease,
+            transform 0.25s ease,
+            background 0.25s ease;
+
+        &:hover {
+            border-color: rgba(255, 255, 255, 0.36);
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        @media only screen and (max-width: 678px) {
+            min-height: 240px;
+            padding: 16px;
+        }
+    }
+
+    .case-card__meta {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        overflow: hidden;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: $secondary;
+    }
+
+    .case-card__tag {
+        font-weight: 500;
+    }
+
+    .case-card__title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0;
+
+        @media only screen and (max-width: 678px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    .case-card__lede {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.78);
+        margin: 0;
+
+        @media only screen and (max-width: 678px) {
+            font-size: 0.85rem;
+        }
+    }
+
+    .case-card__cta {
+        margin-top: auto;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: $secondary;
     }
 }
 
 .contacts-wrapper {
-    margin-bottom: 120px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -316,7 +424,7 @@ h3 {
 
 .contact {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
     display: flex;
     gap: 16px;
 
@@ -342,7 +450,9 @@ h3 {
 
 .section-header {
     margin-top: 80px;
-    font-size: 1.4rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
     color: var(--secondary);
 }
 </style>

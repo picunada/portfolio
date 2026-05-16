@@ -2,9 +2,20 @@
 export default defineNuxtConfig({
     devtools: { enabled: true },
     compatibilityDate: "2026-05-15",
+    site: {
+        url: "https://picunada.dev",
+        name: "Picunada",
+    },
     app: {
         head: {
-            link: [{ rel: "icon", type: "image/png", href: "/Icon.svg" }],
+            htmlAttrs: { lang: "en" },
+            link: [
+                { rel: "icon", type: "image/svg+xml", href: "/Icon.svg" },
+                { rel: "canonical", href: "https://picunada.dev" },
+            ],
+            meta: [
+                { name: "theme-color", content: "#0f0f0f" },
+            ],
         },
     },
     vite: {

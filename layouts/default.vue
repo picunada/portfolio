@@ -16,6 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <ShaderBackground />
   <Preloader />
   <AppHeader />
   <div class="page-wrapper">

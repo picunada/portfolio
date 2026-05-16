@@ -1,10 +1,8 @@
 import Lenis from 'lenis'
 
 export default defineNuxtPlugin(() => {
-  const { $router } = useNuxtApp()
-
   const lenis = new Lenis({
-    infinite: true,
+    infinite: false,
   })
 
   function raf(time: number) {
@@ -13,16 +11,6 @@ export default defineNuxtPlugin(() => {
   }
 
   window.requestAnimationFrame(raf)
-
-  $router.afterEach((to, from) => {
-    if (to.path !== from.path && ['/garant', '/portfolio-old', '/locker'].includes(to.path)) {
-      lenis.scrollTo('#__nuxt', {
-        offset: 0,
-        duration: 0,
-        immediate: true,
-      })
-    }
-  })
 
   return {
     provide: {
