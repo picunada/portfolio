@@ -1,4 +1,4 @@
-$background: rgb(0, 0, 0);
+$background: rgb(15, 15, 15);
 $primary: #fff;
 $secondary: #8e8e8e;
 
@@ -6,7 +6,7 @@ $green: rgb(10, 65, 27);
 $emerald: rgb(101, 245, 137);
 
 :root {
-  --background: #{$background};
-  --primary: #{$primary};
-  --secondary: #{$secondary};
+    --background: #{$background};
+    --primary: #{$primary};
+    --secondary: #{$secondary};
 }

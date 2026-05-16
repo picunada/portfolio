@@ -23,4 +23,5 @@ onMounted(() => {
   </div>
 
   <Cursor />
+  <ShaderDebug />
 </template>

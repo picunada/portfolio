@@ -1,51 +1,53 @@
 html {
-  font-family: 'Manrope';
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 300;
+    letter-spacing: 0.04em;
 }
 
 @font-face {
-  font-family: 'Manrope';
-  font-display: swap;
-  src: url('/fonts/Manrope/Manrope-ExtraLight.woff2') format('woff2'),
-    url('/fonts/Manrope/Manrope-Light.woff2') format('woff2'),
-    url('/fonts/Manrope/Manrope-Regular.woff2') format('woff2'),
-    url('/fonts/Manrope/Manrope-Medium.woff2') format('woff2'),
-    url('/fonts/Manrope/Manrope-SemiBold.woff2') format('woff2'),
-    url('/fonts/Manrope/Manrope-Bold.woff2') format('woff2'),
-    url('/fonts/Manrope/Manrope-ExtraBold.woff2') format('woff2');
-  font-weight: 500;
+    font-family: "Manrope";
+    font-display: swap;
+    src:
+        url("/fonts/Manrope/Manrope-ExtraLight.woff2") format("woff2"),
+        url("/fonts/Manrope/Manrope-Light.woff2") format("woff2"),
+        url("/fonts/Manrope/Manrope-Regular.woff2") format("woff2"),
+        url("/fonts/Manrope/Manrope-Medium.woff2") format("woff2"),
+        url("/fonts/Manrope/Manrope-SemiBold.woff2") format("woff2"),
+        url("/fonts/Manrope/Manrope-Bold.woff2") format("woff2"),
+        url("/fonts/Manrope/Manrope-ExtraBold.woff2") format("woff2");
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: 'Major Mono';
-  src: url('/fonts/MajorMono/MajorMonoDisplay-Regular.woff2') format('woff2');
-  font-weight: 400;
+    font-family: "Major Mono";
+    src: url("/fonts/MajorMono/MajorMonoDisplay-Regular.woff2") format("woff2");
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Format1452';
-  src: url('/fonts/Format1452/Format_1452.woff2') format('woff2');
-  font-weight: 400;
+    font-family: "Format1452";
+    src: url("/fonts/Format1452/Format_1452.woff2") format("woff2");
+    font-weight: 400;
 }
-
 
 body {
-  background-color: $background;
-  color: $primary;
-  font-size: calc(100vw/2560 * 32);
+    background-color: $background;
+    color: $primary;
+    font-size: calc(100vw / 2560 * 32);
 
-  @media only screen and (max-width: 678px) {
-    font-size: calc(100vw/678 * 12);
-  }
+    @media only screen and (max-width: 678px) {
+        font-size: calc(100vw / 678 * 12);
+    }
 }
 
 * {
-  margin: 0;
-  box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 button {
-  background-color: transparent;
-  border: none;
+    background-color: transparent;
+    border: none;
 }
 
 h1,
@@ -53,125 +55,124 @@ h2,
 h3,
 h4,
 p {
-  user-select: none;
+    user-select: none;
 }
 
 a {
-  color: $primary;
-  text-decoration: none;
+    color: $primary;
+    text-decoration: none;
 }
 
 .page-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
 }
 
 .page {
-  max-width: 1400px;
-  width: 100%;
-  padding: 24px*4 16px*4;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  text-align: start;
+    max-width: 1400px;
+    width: 100%;
+    padding: 24px * 4 16px * 4;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: start;
 
-  @media only screen and (max-width: 678px) {
-    padding: 16px 24px;
-  }
+    @media only screen and (max-width: 678px) {
+        padding: 16px 24px;
+    }
 }
 
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
-
 
 // project
 
 .image-seq {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .project--header {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 24px;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 24px;
 }
 
 .project--about {
-  font-size: 1.6rem;
-  font-weight: 500;
-  display: flex;
-  gap: 24px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: flex;
+    gap: 24px;
 
-  @media only screen and (max-width: 678px) {
-    flex-direction: column;
-  }
+    @media only screen and (max-width: 678px) {
+        flex-direction: column;
+    }
 }
 
 .role {
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  .role--item {
+    min-width: 300px;
     display: flex;
-    align-items: center;
-    gap: 16px;
-    text-wrap: balance;
+    flex-direction: column;
+    gap: 8px;
 
-    .tools {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .role--item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-wrap: balance;
 
-    .item--title {
-      font-size: 0.7em;
-      color: $secondary;
-      text-transform: lowercase;
+        .tools {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .item--title {
+            font-size: 0.7em;
+            color: $secondary;
+            text-transform: lowercase;
+        }
     }
-  }
 }
 
 .project-description {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 16px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .back-button {
-  cursor: pointer;
-  position: fixed;
-  color: white;
-  top: 5%;
-  left: 0;
-  translate: 48px 100%;
-  z-index: 2;
+    cursor: pointer;
+    position: fixed;
+    color: white;
+    top: 5%;
+    left: 0;
+    translate: 48px 100%;
+    z-index: 2;
 
-  @media only screen and (max-width: 678px) {
-    translate: 16px 50%;
-  }
+    @media only screen and (max-width: 678px) {
+        translate: 16px 50%;
+    }
 }
 
 .spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
 }
 
 /* we will explain what these classes do next! */
 .spinner-enter-active,
 .spinner-leave-active {
-  transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .spinner-enter-from,
 .spinner-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
