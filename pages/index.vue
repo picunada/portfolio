@@ -376,6 +376,10 @@ h3 {
     flex-direction: column;
     gap: 24px;
 
+    @media only screen and (max-width: 678px) {
+        margin-top: 40px;
+    }
+
     .project-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -499,5 +503,9 @@ h3 {
     font-weight: 400;
     text-transform: uppercase;
     color: var(--secondary);
+
+    @media only screen and (max-width: 678px) {
+        margin-top: 40px;
+    }
 }
 </style>
