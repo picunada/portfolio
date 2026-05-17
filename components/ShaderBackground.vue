@@ -14,6 +14,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
     unregister?.();
+    sketch?.dispose();
 });
 </script>
 

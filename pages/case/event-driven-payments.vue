@@ -399,9 +399,10 @@ useSeoMeta({
 
 <style lang="scss" scoped>
 .case-page {
+    max-width: 880px;
     gap: 80px;
     padding: 80px 48px 96px;
-    margin: 80px 0 120px;
+    margin: 80px auto 120px;
     background: rgba(15, 15, 15, 0.9);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);

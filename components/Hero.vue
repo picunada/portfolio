@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 
 const preloaded = useState("loaded");
 const symbolsRefs = ref<HTMLParagraphElement[] | null>();
+const subtitleRef = ref<HTMLParagraphElement | null>(null);
 const nick = ref("picunada");
 
 function revealNick() {
@@ -19,6 +20,20 @@ function revealNick() {
             },
         );
     });
+
+    if (subtitleRef.value) {
+        gsap.fromTo(
+            subtitleRef.value,
+            { opacity: 0, translateY: 8 },
+            {
+                ease: "power2.out",
+                duration: 0.8,
+                delay: 0.9,
+                opacity: 1,
+                translateY: 0,
+            },
+        );
+    }
 }
 
 watch(preloaded, (v) => {
@@ -32,23 +47,28 @@ onMounted(() => {
 
 <template>
     <section class="hero">
-        <div class="nick-container">
-            <div class="nick">
-                <p
-                    v-for="symbol in nick"
-                    :key="nick.indexOf(symbol)"
-                    ref="symbolsRefs"
-                >
-                    {{ symbol }}
-                </p>
+        <div class="identity">
+            <div class="nick-container">
+                <div class="nick">
+                    <p
+                        v-for="symbol in nick"
+                        :key="nick.indexOf(symbol)"
+                        ref="symbolsRefs"
+                    >
+                        {{ symbol }}
+                    </p>
+                </div>
             </div>
+            <p ref="subtitleRef" class="subtitle">
+                backend · fintech · seattle
+            </p>
         </div>
 
         <svg
             class="arrow mouse-sm"
             xmlns="http://www.w3.org/2000/svg"
-            width="96"
-            height="96"
+            width="48"
+            height="48"
             viewBox="0 0 24 24"
         >
             <path
@@ -67,14 +87,29 @@ onMounted(() => {
     height: 100vh;
 }
 
-.nick-container {
+.identity {
     position: absolute;
-    overflow: hidden;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    mix-blend-mode: overlay;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(12px, calc(100vw / 2560 * 28), 32px);
+    padding: 48px;
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
     z-index: 1;
+
+    @media only screen and (max-width: 678px) {
+        padding: 24px;
+        border-radius: 12px;
+    }
+}
+
+.nick-container {
+    overflow: hidden;
 }
 
 .nick {
@@ -90,6 +125,19 @@ onMounted(() => {
 
 .nick p {
     line-height: 1;
+}
+
+.subtitle {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: clamp(0.72rem, calc(100vw / 2560 * 22), 1.1rem);
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: lowercase;
+    white-space: nowrap;
+    user-select: none;
+    opacity: 0;
 }
 
 .arrow {

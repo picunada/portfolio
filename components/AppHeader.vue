@@ -24,12 +24,6 @@ const isMobile = useMediaQuery("(max-width: 678px)");
                     <p class="mouse-sm">LinkedIn</p>
                 </CustomLink>
                 <CustomLink
-                    link="https://twitter.com/SonzuXlayst"
-                    target="_blank"
-                >
-                    <p class="mouse-sm">Twitter</p>
-                </CustomLink>
-                <CustomLink
                     link="/resume.pdf"
                     download="Daniil_Bezuglov(@picunada).pdf"
                 >
@@ -63,7 +57,7 @@ header {
 }
 
 %glass-pill {
-    background: rgba(20, 20, 24, 0.18);
+    background: rgba(20, 20, 24, 0.85);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);

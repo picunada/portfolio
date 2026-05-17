@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
-    title: "Picunada — Backend Engineer · Payments",
+    title: "Picunada - Backend Engineer · Payments",
     description:
         "Backend Engineer and Tech Lead at LUCKYPAY. I build high-throughput payment platforms, event-driven services, and real-time analytics in Go and Python.",
-    ogTitle: "Picunada — Backend Engineer · Payments",
+    ogTitle: "Picunada - Backend Engineer · Payments",
 });
 </script>
 
@@ -23,36 +23,32 @@ useSeoMeta({
                 <div class="about-column">
                     <RevealOnScroll>
                         <p class="about mouse-md">
-                            I architect and ship high-throughput payment
-                            platforms, event-driven services, and data
-                            aggregation systems in Go and Python.
+                            Backend engineer working on payment systems - Go and
+                            Python, mostly. I like the messy parts: provider
+                            cascades, retries, idempotency, and the analytics
+                            that tell you whether any of it is actually working.
                         </p>
                     </RevealOnScroll>
                     <RevealOnScroll>
                         <p class="about mouse-md">
-                            Currently leading engineering at a fintech startup,
-                            designing P2P payment flows, provider cascades over
-                            NATS, and real-time analytics on ClickHouse.
+                            Currently Tech Lead at a payments startup, where I
+                            design P2P payment flows, route traffic across
+                            providers over NATS, and run our analytics on
+                            ClickHouse.
                         </p>
                     </RevealOnScroll>
                     <RevealOnScroll>
                         <p class="about mouse-md">
-                            I care about reliability and observability —
+                            I care most about reliability and observability -
                             distributed tracing, structured logs, and dashboards
                             that catch issues before users do.
                         </p>
                     </RevealOnScroll>
                     <RevealOnScroll>
                         <p class="about mouse-md">
-                            Originally from Russia, I've lived and worked in
-                            Vietnam, and I'm currently based in Seattle, WA.
-                        </p>
-                    </RevealOnScroll>
-                    <RevealOnScroll>
-                        <p class="about mouse-md">
-                            When I&apos;m not shipping backends, you&apos;ll
-                            find me gaming and exploring the outdoors on
-                            refreshing walks.
+                            Originally from Russia, spent time in Vietnam, now
+                            based in Seattle. Outside of work I&apos;m usually
+                            gaming or out on a long walk.
                         </p>
                     </RevealOnScroll>
                 </div>
@@ -61,37 +57,53 @@ useSeoMeta({
                         <div class="experience-header">[ experience ]</div>
                     </RevealOnScroll>
                     <RevealOnScroll>
-                        <div class="work">
-                            <div class="work__company">LUCKYPAY</div>
-                            <div class="work__meta">Jun 2024 — Now · 2 yrs</div>
+                        <div class="work work--current">
+                            <div class="work__head">
+                                <span class="work__company"
+                                    >Payments startup</span
+                                >
+                                <span class="work__date">2024 — Now</span>
+                            </div>
                             <div class="work__role">Tech Lead</div>
+                            <div class="work__stack">
+                                Go · NATS · ClickHouse · Python
+                            </div>
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll>
                         <div class="work">
-                            <div class="work__company">Multitender</div>
-                            <div class="work__meta">
-                                Apr 2023 — Jun 2024 · 1+ yr
+                            <div class="work__head">
+                                <span class="work__company">Multitender</span>
+                                <span class="work__date">2023 — 2024</span>
                             </div>
                             <div class="work__role">Full Stack Engineer</div>
+                            <div class="work__stack">
+                                Vue · Python · MongoDB · Redis
+                            </div>
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll>
-                        <div class="work">
-                            <div class="work__company">Lockerbot</div>
-                            <div class="work__meta">
-                                Apr 2022 — Apr 2023 · 1 yr
+                        <div class="work work--faded">
+                            <div class="work__head">
+                                <span class="work__company">Lockerbot</span>
+                                <span class="work__date">2022 — 2023</span>
                             </div>
                             <div class="work__role">Frontend Engineer</div>
+                            <div class="work__stack">Swift · Vue</div>
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll>
-                        <div class="work">
-                            <div class="work__company">Digital Spirit</div>
-                            <div class="work__meta">
-                                Sep 2021 — Apr 2022 · 7 mo
+                        <div class="work work--faded">
+                            <div class="work__head">
+                                <span class="work__company"
+                                    >Digital Spirit</span
+                                >
+                                <span class="work__date">2021 — 2022</span>
                             </div>
                             <div class="work__role">QA Engineer</div>
+                            <div class="work__stack">
+                                Manual · Postman · SQL
+                            </div>
                         </div>
                     </RevealOnScroll>
 
@@ -100,10 +112,12 @@ useSeoMeta({
                     </RevealOnScroll>
                     <RevealOnScroll>
                         <div class="work">
-                            <div class="work__company">
-                                TON Foundation hackathon
+                            <div class="work__head">
+                                <span class="work__company"
+                                    >TON Foundation hackathon</span
+                                >
+                                <span class="work__date">2nd place</span>
                             </div>
-                            <div class="work__meta">2nd place</div>
                             <div class="work__role">$10K award</div>
                         </div>
                     </RevealOnScroll>
@@ -123,15 +137,15 @@ useSeoMeta({
                                 <span class="case-card__tag"
                                     >payments · performance</span
                                 >
-                                <span class="case-card__year">2025</span>
+                                <span class="case-card__year">2026</span>
                             </div>
                             <h3 class="case-card__title">
                                 Improving provider cascade performance
                             </h3>
                             <p class="case-card__lede">
-                                Reworking the routing layer that picks payment
-                                providers — cutting tail latency and surviving
-                                partial outages without manual intervention.
+                                Cutting provider-discovery latency from 50–60 ms
+                                to 3–5 ms - splitting the cascade build into a
+                                Go service backed by a NATS JetStream KV cache.
                             </p>
                             <span class="case-card__cta"
                                 >Read case study →</span
@@ -151,13 +165,13 @@ useSeoMeta({
                                 <span class="case-card__year">2025</span>
                             </div>
                             <h3 class="case-card__title">
-                                Event-driven payment flow on NATS
+                                Single-shot withdrawals to a durable cascade
                             </h3>
                             <p class="case-card__lede">
-                                Moving the payment pipeline off synchronous RPC
-                                and onto an event-driven backbone — decoupling
-                                services, taming retries, unlocking real-time
-                                analytics.
+                                Lifting withdrawal success from 10-20% to
+                                50-60% by replacing one-attempt provider
+                                routing with an FSM-driven cascade on NATS
+                                JetStream.
                             </p>
                             <span class="case-card__cta"
                                 >Read case study →</span
@@ -218,8 +232,9 @@ h3 {
 }
 
 .text-wrapper {
-    font-size: 2rem;
+    font-size: 1.625rem;
     font-weight: 300;
+    line-height: 1.4;
     margin-top: 40px;
 
     h1 {
@@ -294,14 +309,34 @@ h3 {
 .work {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    padding-bottom: 12px;
+    gap: 4px;
+    padding-bottom: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: opacity 0.25s ease;
 
     &:last-child {
         border-bottom: none;
         padding-bottom: 0;
     }
+
+    &--faded {
+        opacity: 0.55;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    &--current .work__company {
+        color: $primary;
+    }
+}
+
+.work__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
 }
 
 .work__company {
@@ -311,18 +346,28 @@ h3 {
     line-height: 1.3;
 }
 
-.work__meta {
+.work__date {
     font-size: 0.75rem;
     font-weight: 400;
     color: $secondary;
     letter-spacing: 0.02em;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
 }
 
 .work__role {
     font-size: 0.9rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.75);
-    margin-top: 2px;
+}
+
+.work__stack {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: $secondary;
+    letter-spacing: 0.02em;
+    margin-top: 4px;
 }
 
 .projects-wrapper {

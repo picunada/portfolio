@@ -31,7 +31,7 @@ export default class Gradient {
     }
 
     public animate() {
-        this.time += 0.02;
+        this.time += 0.01;
         this.material.uniforms.time.value = this.time;
     }
 
