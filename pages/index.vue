@@ -2,7 +2,7 @@
 useSeoMeta({
     title: "Picunada - Backend Engineer · Payments",
     description:
-        "Backend Engineer and Tech Lead at LUCKYPAY. I build high-throughput payment platforms, event-driven services, and real-time analytics in Go and Python.",
+        "Backend Engineer and Tech Lead at a payments startup. I build high-throughput payment platforms, event-driven services, and real-time analytics in Go and Python.",
     ogTitle: "Picunada - Backend Engineer · Payments",
 });
 </script>
