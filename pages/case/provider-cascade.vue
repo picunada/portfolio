@@ -216,7 +216,7 @@ useSeoMeta({
                         </li>
                     </ul>
                     <p class="mouse-sm">
-                        Two non-obvious tradeoffs were worth surfacing
+                        One non-obvious tradeoff was worth surfacing
                         explicitly:
                     </p>
                     <ul class="mouse-sm">
