@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { $router } = useNuxtApp();
-
 useSeoMeta({
     title: "Improving provider cascade performance",
     description:
@@ -10,22 +8,6 @@ useSeoMeta({
 </script>
 
 <template>
-    <button class="back-button mouse-sm" @click="() => $router.go(-1)">
-        <svg
-            class="mouse-sm"
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-        >
-            <path
-                class="mouse-sm"
-                fill="currentColor"
-                d="M10 22L0 12L10 2l1.775 1.775L3.55 12l8.225 8.225L10 22Z"
-            />
-        </svg>
-    </button>
-
     <div class="page case-page">
         <header class="case-hero">
             <RevealOnScroll>
@@ -382,9 +364,9 @@ useSeoMeta({
 
     @media only screen and (max-width: 678px) {
         gap: 48px;
-        padding: 48px 24px 64px;
-        margin: 48px 0 64px;
-        border-radius: 12px;
+        padding: 96px 24px 64px;
+        margin: 0;
+        border-radius: 0;
     }
 }
 
