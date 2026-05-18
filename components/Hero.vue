@@ -97,6 +97,7 @@ onMounted(() => {
     align-items: center;
     gap: clamp(12px, calc(100vw / 2560 * 28), 32px);
     padding: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(15, 15, 15, 0.9);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);

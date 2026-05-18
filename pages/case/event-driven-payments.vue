@@ -6,9 +6,19 @@ useSeoMeta({
     ogTitle:
         "Turning single-shot withdrawals into a durable cascade - Picunada",
 });
+
+const sections = [
+    { id: "problem", label: "Problem" },
+    { id: "constraints", label: "Constraints" },
+    { id: "solution", label: "Solution" },
+    { id: "rollout", label: "Rollout" },
+    { id: "result", label: "Result" },
+    { id: "reflection", label: "Reflection" },
+];
 </script>
 
 <template>
+    <CaseStudyNav :sections="sections" />
     <div class="page case-page">
         <header class="case-hero">
             <RevealOnScroll>
@@ -54,7 +64,7 @@ useSeoMeta({
             </dl>
         </header>
 
-        <section class="case-section">
+        <section id="problem" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Problem</h2>
             </RevealOnScroll>
@@ -64,10 +74,10 @@ useSeoMeta({
                         When a user requests a withdrawal, our platform routes
                         it to a payment provider that pushes the money out.
                         Provider behavior varies wildly: some confirm in
-                        seconds, others take up to 15 minutes to settle and
-                        call back with a webhook. Some reject the order
-                        outright, some accept and then fail mid-flight, some
-                        never respond at all.
+                        seconds, others take up to 15 minutes to settle and call
+                        back with a webhook. Some reject the order outright,
+                        some accept and then fail mid-flight, some never respond
+                        at all.
                     </p>
                     <p class="mouse-sm">
                         The old withdrawal path lived inside
@@ -75,8 +85,8 @@ useSeoMeta({
                         single-shot: build the eligibility cascade, take the
                         cheapest provider off the top, create one withdrawal
                         order, return. If that provider declined or timed out,
-                        the withdrawal failed - falling to manual handling or
-                        a user retry. We were leaving the rest of the cascade,
+                        the withdrawal failed - falling to manual handling or a
+                        user retry. We were leaving the rest of the cascade,
                         sometimes a dozen otherwise-viable providers, on the
                         floor on every failure.
                     </p>
@@ -92,19 +102,19 @@ useSeoMeta({
                             10-20%.
                         </li>
                         <li>
-                            <strong>Time.</strong> Trying providers
-                            sequentially when each can take up to 15 minutes
-                            to acknowledge means the workflow can't live inside
-                            a synchronous HTTP request, an in-memory worker, or
-                            anything bound to a single process's lifecycle. It
-                            had to be durable and resumable.
+                            <strong>Time.</strong> Trying providers sequentially
+                            when each can take up to 15 minutes to acknowledge
+                            means the workflow can't live inside a synchronous
+                            HTTP request, an in-memory worker, or anything bound
+                            to a single process's lifecycle. It had to be
+                            durable and resumable.
                         </li>
                     </ul>
                 </div>
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="constraints" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Constraints</h2>
             </RevealOnScroll>
@@ -114,8 +124,8 @@ useSeoMeta({
                         <li>
                             <strong>Money safety is non-negotiable.</strong>
                             Every withdrawal touches provider balances; partial
-                            state from a crash mid-flight cannot translate
-                            into double-spends or stuck frozen funds.
+                            state from a crash mid-flight cannot translate into
+                            double-spends or stuck frozen funds.
                         </li>
                         <li>
                             <strong>API shape preserved.</strong>
@@ -138,7 +148,7 @@ useSeoMeta({
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="solution" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Solution</h2>
             </RevealOnScroll>
@@ -149,9 +159,9 @@ useSeoMeta({
                         microservice that owns withdrawal execution end-to-end.
                         <code>cascade-core</code> no longer attempts providers
                         itself - it hands the full cascade to
-                        <code>payment-service</code> and walks away. The
-                        service drives the withdrawal through the cascade in
-                        its own time.
+                        <code>payment-service</code> and walks away. The service
+                        drives the withdrawal through the cascade in its own
+                        time.
                     </p>
 
                     <h3 class="case-subhead">Core abstractions</h3>
@@ -176,8 +186,8 @@ useSeoMeta({
                     <p class="mouse-sm">
                         Queue rule: any task <code>SUCCEEDED</code> → queue
                         <code>COMPLETED</code>, remaining tasks stop. All tasks
-                        terminal without a success → queue
-                        <code>FAILED</code>, balances unwound.
+                        terminal without a success → queue <code>FAILED</code>,
+                        balances unwound.
                     </p>
 
                     <h3 class="case-subhead">
@@ -197,8 +207,7 @@ useSeoMeta({
                         </li>
                         <li>
                             <code>order.task.webhook.timeout</code> - fires if
-                            the provider hasn't called back by the SLA
-                            deadline.
+                            the provider hasn't called back by the SLA deadline.
                         </li>
                         <li>
                             <code>order.task.status.tick</code> /
@@ -206,28 +215,27 @@ useSeoMeta({
                             status-polling fallback.
                         </li>
                         <li>
-                            <code>order.task.webhook.received</code> -
-                            forwarded by <code>provider-service</code> after
-                            HMAC validation.
+                            <code>order.task.webhook.received</code> - forwarded
+                            by <code>provider-service</code> after HMAC
+                            validation.
                         </li>
                     </ul>
                     <p class="mouse-sm">
                         Each step is a stateless handler that reads the task
-                        from Postgres, advances the FSM, persists, and
-                        publishes the next event. Consumers are durable with
-                        explicit ack and <code>MaxDeliver=N</code>; anything
-                        that fails repeatedly republishes to
+                        from Postgres, advances the FSM, persists, and publishes
+                        the next event. Consumers are durable with explicit ack
+                        and <code>MaxDeliver=N</code>; anything that fails
+                        repeatedly republishes to
                         <code>order.task.dlq</code> for alerting. A 15-minute
                         provider wait is just one row in Postgres and one
-                        delayed message in JetStream - nothing pinned in
-                        memory.
+                        delayed message in JetStream - nothing pinned in memory.
                     </p>
 
                     <h3 class="case-subhead">Money safety</h3>
                     <p class="mouse-sm">
                         Balance operations route through
-                        <code>cascade-core</code> as the single source of
-                        truth, keyed by <code>task_id</code> for idempotency:
+                        <code>cascade-core</code> as the single source of truth,
+                        keyed by <code>task_id</code> for idempotency:
                     </p>
                     <ul class="mouse-sm">
                         <li><code>freeze</code> on <code>CREATING</code></li>
@@ -237,8 +245,8 @@ useSeoMeta({
                             terminal credit)
                         </li>
                         <li>
-                            <code>rollback</code> on
-                            <code>FAILED</code> / <code>SKIPPED</code> /
+                            <code>rollback</code> on <code>FAILED</code> /
+                            <code>SKIPPED</code> /
                             <code>CANCELLED</code>
                         </li>
                     </ul>
@@ -282,7 +290,7 @@ useSeoMeta({
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="rollout" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Rollout</h2>
             </RevealOnScroll>
@@ -294,14 +302,14 @@ useSeoMeta({
                         produce fundamentally different outcomes (one attempt
                         vs. many), so a per-request comparison wouldn't have
                         been meaningful. We mitigated risk by leaning on
-                        idempotent balance operations, finance reconciliation
-                        on day one, and ops on standby.
+                        idempotent balance operations, finance reconciliation on
+                        day one, and ops on standby.
                     </p>
                 </div>
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="result" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Result</h2>
             </RevealOnScroll>
@@ -351,27 +359,26 @@ useSeoMeta({
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="reflection" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Reflection</h2>
             </RevealOnScroll>
             <RevealOnScroll>
                 <div class="case-section__body">
                     <p class="mouse-sm">
-                        The bigger lesson from this project was about rollout.
-                        A direct cutover worked, but it worked because of
+                        The bigger lesson from this project was about rollout. A
+                        direct cutover worked, but it worked because of
                         idempotent balance operations and aggressive day-one
                         monitoring - not because the cutover itself was safe.
-                        Next time, even when shadow comparison isn't
-                        meaningful, I'd ship behind a per-merchant or
-                        percentage flag so a regression is bounded.
+                        Next time, even when shadow comparison isn't meaningful,
+                        I'd ship behind a per-merchant or percentage flag so a
+                        regression is bounded.
                     </p>
                     <p class="mouse-sm">
-                        The FSM and JetStream-timer-as-durable-state pattern,
-                        on the other hand, were the right calls and I'd reach
-                        for them again - they're what made a 15-minute
-                        external dependency tractable inside a stateless
-                        service.
+                        The FSM and JetStream-timer-as-durable-state pattern, on
+                        the other hand, were the right calls and I'd reach for
+                        them again - they're what made a 15-minute external
+                        dependency tractable inside a stateless service.
                     </p>
                 </div>
             </RevealOnScroll>
@@ -385,6 +392,7 @@ useSeoMeta({
     gap: 80px;
     padding: 80px 48px 96px;
     margin: 80px auto 120px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(15, 15, 15, 0.9);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);

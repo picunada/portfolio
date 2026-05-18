@@ -168,10 +168,9 @@ useSeoMeta({
                                 Single-shot withdrawals to a durable cascade
                             </h3>
                             <p class="case-card__lede">
-                                Lifting withdrawal success from 10-20% to
-                                50-60% by replacing one-attempt provider
-                                routing with an FSM-driven cascade on NATS
-                                JetStream.
+                                Lifting withdrawal success from 10-20% to 50-60%
+                                by replacing one-attempt provider routing with
+                                an FSM-driven cascade on NATS JetStream.
                             </p>
                             <span class="case-card__cta"
                                 >Read case study →</span
@@ -220,6 +219,7 @@ h3 {
     gap: 24px;
     padding: 48px;
     margin: 80px 0 120px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(15, 15, 15, 0.9);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);

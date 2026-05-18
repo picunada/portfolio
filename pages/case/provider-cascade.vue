@@ -5,9 +5,20 @@ useSeoMeta({
         "How I cut payment provider-discovery latency from 50–60 ms to 3–5 ms by splitting the cascade build into a Go service backed by a NATS JetStream KV cache.",
     ogTitle: "Improving provider cascade performance - Picunada",
 });
+
+const sections = [
+    { id: "problem", label: "Problem" },
+    { id: "constraints", label: "Constraints" },
+    { id: "diagnosis", label: "Diagnosis" },
+    { id: "solution", label: "Solution" },
+    { id: "rollout", label: "Rollout" },
+    { id: "result", label: "Result" },
+    { id: "reflection", label: "Reflection" },
+];
 </script>
 
 <template>
+    <CaseStudyNav :sections="sections" />
     <div class="page case-page">
         <header class="case-hero">
             <RevealOnScroll>
@@ -52,7 +63,7 @@ useSeoMeta({
             </dl>
         </header>
 
-        <section class="case-section">
+        <section id="problem" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Problem</h2>
             </RevealOnScroll>
@@ -90,7 +101,7 @@ useSeoMeta({
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="constraints" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Constraints</h2>
             </RevealOnScroll>
@@ -128,7 +139,7 @@ useSeoMeta({
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="diagnosis" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Diagnosis</h2>
             </RevealOnScroll>
@@ -155,7 +166,7 @@ useSeoMeta({
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="solution" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Solution</h2>
             </RevealOnScroll>
@@ -216,8 +227,7 @@ useSeoMeta({
                         </li>
                     </ul>
                     <p class="mouse-sm">
-                        One non-obvious tradeoff was worth surfacing
-                        explicitly:
+                        One non-obvious tradeoff was worth surfacing explicitly:
                     </p>
                     <ul class="mouse-sm">
                         <li>
@@ -231,7 +241,7 @@ useSeoMeta({
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="rollout" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Rollout</h2>
             </RevealOnScroll>
@@ -280,7 +290,7 @@ useSeoMeta({
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="result" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Result</h2>
             </RevealOnScroll>
@@ -324,7 +334,7 @@ useSeoMeta({
             </RevealOnScroll>
         </section>
 
-        <section class="case-section">
+        <section id="reflection" class="case-section">
             <RevealOnScroll>
                 <h2 class="case-section__title mouse-md">Reflection</h2>
             </RevealOnScroll>
@@ -358,6 +368,7 @@ useSeoMeta({
     gap: 80px;
     padding: 80px 48px 96px;
     margin: 80px auto 120px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(15, 15, 15, 0.9);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);
